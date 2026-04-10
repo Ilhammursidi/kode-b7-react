@@ -1,30 +1,37 @@
 import { useState,useEffect } from "react";
 /**
  * a fetch data custom hook
- * 
+ * @param {url} url to fetch
  */
 
-export function useFetch() {
-    const [loading, isLoading] = useState(false)
-    const [error, setError] = useState("")
-    const [dataFetch, setDataFetch] = useEffect(()=>{
-        const dataFetch = async (url, options = {}) => {
+export function useFetch(url) {
+    const [isLoading, setLoading] = useState(true)
+    const [isError, setError] = useState("")
+    const [dataFetch, setDataFetch] = useState("")
+    
+    
+    useEffect(()=>{
+        
+        setLoading(true)
+        setError("")
+
+        const fetchData = async () => {
         try {
-            isLoading(true)
-            const response = await fetch(url, options);
+            const response = await fetch(url);
             if (!response.ok) throw new Error(`${response.status}:${response.statusText}`);
             const data = await response.json();
-            isLoading(false)
-            setDataFetch(data)
+            const result = data.results
+            setDataFetch(result)
         } catch (error) {
-            setError(error)
+            setError(error.message)
+        } finally {
+            setLoading(false)
         }
     }
+    fetchData();
     
-
-    return [dataFetch,loading,error]
-},[])
+},[url])
 
 
-    
+ return {dataFetch,isLoading,isError}   
 }
