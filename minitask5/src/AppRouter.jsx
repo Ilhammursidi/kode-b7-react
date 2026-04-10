@@ -6,12 +6,14 @@ import Counter from './Pages/Counter';
 import { DetailCharacter } from "./Components/DetailCharacter"
 import Product from './Pages/Product';
 import { ListRickMorty } from './Components/FetchRickMorty';
+import RickMortyTwo from './Pages/RickMortyTwo';
     
 function AppRouter() {
     return(
         <Routes>
             <Route index element={<App/>}></Route>
             <Route path='pokemon' element={<Pokemon/>}></Route>
+            <Route path='rickmortytwo' element={<RickMortyTwo/>}></Route>
             <Route path='product' element={<Product/>}></Route>
             <Route path='counter' element={<Counter/>}></Route>
             <Route path='character' element={<RickMorty/>}>
