@@ -7,11 +7,13 @@ import { DetailCharacter } from "./Components/DetailCharacter"
 import Product from './Pages/Product';
 import { ListRickMorty } from './Components/FetchRickMorty';
 import RickMortyTwo from './Pages/RickMortyTwo';
-    
+import { Login } from './Pages/FormContext';
+
 function AppRouter() {
     return(
         <Routes>
             <Route index element={<App/>}></Route>
+            <Route path='login' element={<Login/>}></Route>
             <Route path='pokemon' element={<Pokemon/>}></Route>
             <Route path='rickmortytwo' element={<RickMortyTwo/>}></Route>
             <Route path='product' element={<Product/>}></Route>
