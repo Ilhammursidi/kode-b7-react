@@ -1,3 +1,5 @@
+// minitask 1 week 6
+
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { useFetch } from "../hooks/useFetch";
