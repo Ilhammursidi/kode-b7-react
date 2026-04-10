@@ -24,6 +24,10 @@ function Nav(){
                     Rick&Morty
                 </NavLink>
                     </li>
+                <li><NavLink className={({isActive}) => isActive ? "bg-white rounded px-1" : " "} to={"/rickmortytwo"}>
+                    Custom Hook
+                </NavLink>
+                    </li>
             </ul>
         </nav>
     )

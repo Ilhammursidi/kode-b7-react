@@ -14,8 +14,10 @@ function RickMortyTwo() {
         <Header></Header>
         {dataFetch.map((results) => (
           <section key={results.name}>
+            <section>
             <p>{results.name}</p>
             <img src={results.image} alt="" />
+            </section>
           </section>
         ))}
       <Footer></Footer>
