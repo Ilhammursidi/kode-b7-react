@@ -8,8 +8,8 @@ import Product from './Pages/Product';
 import { ListRickMorty } from './Components/FetchRickMorty';
 import RickMortyTwo from './Pages/RickMortyTwo';
 import { Login } from './Pages/FormContext';
-import { EditProfile } from './Pages/editProfile';
 import { Layout } from './Pages/Layout';
+import { EditProfile } from './Pages/temp';
 
 function AppRouter() {
     return(
