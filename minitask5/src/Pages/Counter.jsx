@@ -1,8 +1,5 @@
 import { useState } from 'react'
 
-import Header from '../Components/Header'
-import Footer from '../Components/Footer'
-
 function Counter() {
 const [counter, setCounter] = useState(0)
 
@@ -21,8 +18,6 @@ const deCounter = () => {
 }
 
     return (
-        <section>
-            <Header></Header>
         <section className='flex flex-col h-[calc(100vh-22vh)] justify-center items-center'>
             <h1 className="text-2xl m-20 font-bold">Count: {counter}</h1>
             
@@ -34,8 +29,6 @@ const deCounter = () => {
                 Decrement
             </button>
             </section>
-        </section>
-        <Footer></Footer>
         </section>
     )
 }

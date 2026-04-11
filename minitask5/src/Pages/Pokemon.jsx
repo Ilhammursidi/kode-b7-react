@@ -35,7 +35,6 @@ function Pokemon() {
 
   return (
     <section>
-        <Header></Header>
       <section className="flex flex-row m-10 gap-2">
       <label htmlFor="search">Search Pokemon :</label>
       <input
@@ -67,7 +66,6 @@ function Pokemon() {
           </section>
         ))}
       </section>
-      <Footer></Footer>
     </section>
   );
 }

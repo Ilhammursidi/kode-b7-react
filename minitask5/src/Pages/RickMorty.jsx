@@ -5,9 +5,7 @@ import Footer from "../Components/Footer";
 export function RickMorty() {
     return (
         <section>
-            <Header></Header>
             <Outlet></Outlet>
-            <Footer></Footer>
         </section>
     )
 }

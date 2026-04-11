@@ -32,13 +32,9 @@ const deleteData = (index) => {
 }
 
     return (
-        <section>
-        <Header></Header>
         <section className='flex flex-col justify-center mt-8'>
         <Input onAdd={addData}/>
         <Table data={data} onDelete={deleteData}/>
-        </section>
-        <Footer></Footer>            
         </section>
     )
 }

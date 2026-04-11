@@ -53,7 +53,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <main className='m-auto p-8'>
         
         <form onSubmit={handleSubmit} className='flex flex-col m-auto p-5 rounded-2xl border w-100 gap-2'>
@@ -95,7 +94,6 @@ function App() {
         </section>
 
       </main>
-      <Footer />
     </>
   )
 }

@@ -13,7 +13,6 @@ function RickMortyTwo() {
 
   return (
     <section>
-        <Header></Header>
         {dataFetch.map((results) => (
           <section key={results.name}>
             <section>
@@ -22,7 +21,6 @@ function RickMortyTwo() {
             </section>
           </section>
         ))}
-      <Footer></Footer>
     </section>
   );
 }
