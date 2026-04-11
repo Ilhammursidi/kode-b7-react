@@ -1,27 +1,50 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LoginContext from "./context";
 import { useNavigate } from "react-router";
 
-function LoginProvider({children}) {
+function LoginProvider({ children }) {
     const navigate = useNavigate();
-    const[user,setUser] = useState("")
+
+    const [user, setUser] = useState(null);
+
+    const updateProfile = (newData) => {
+  const updatedUser = { ...user, ...newData };
+
+  setUser(updatedUser);
+  localStorage.setItem("user", JSON.stringify(updatedUser));
+};
+
+    useEffect(() => {
+        const savedUser = localStorage.getItem("user");
+
+        if (savedUser) {
+            setUser(JSON.parse(savedUser));
+        }
+    }, []);
+
     const login = (userData) => {
         setUser(userData);
-    }
+
+        localStorage.setItem("user", JSON.stringify(userData));
+    };
 
     const logout = () => {
-        setUser("")
-        navigate("/")
-    }
+        setUser(null);
+
+        localStorage.removeItem("user");
+
+        navigate("/");
+    };
+
     const editProfile = () => {
-        navigate("/edit-profile")
-    }
+        navigate("/edit-profile");
+    };
 
     return (
-        <LoginContext.Provider value={{user,login,logout,editProfile}}>
+        <LoginContext.Provider value={{ user, login, logout, editProfile,updateProfile }}>
             {children}
         </LoginContext.Provider>
-    )
+    );
 }
 
-export default LoginProvider
+export default LoginProvider;
