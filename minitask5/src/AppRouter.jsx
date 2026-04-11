@@ -8,12 +8,17 @@ import Product from './Pages/Product';
 import { ListRickMorty } from './Components/FetchRickMorty';
 import RickMortyTwo from './Pages/RickMortyTwo';
 import { Login } from './Pages/FormContext';
+import { EditProfile } from './Pages/editProfile';
+import { Layout } from './Pages/Layout';
 
 function AppRouter() {
     return(
         <Routes>
+
+            <Route element={<Layout/>}>
             <Route index element={<App/>}></Route>
             <Route path='login' element={<Login/>}></Route>
+            <Route path='edit-profile' element={<EditProfile/>}></Route>
             <Route path='pokemon' element={<Pokemon/>}></Route>
             <Route path='rickmortytwo' element={<RickMortyTwo/>}></Route>
             <Route path='product' element={<Product/>}></Route>
@@ -21,6 +26,7 @@ function AppRouter() {
             <Route path='character' element={<RickMorty/>}>
                 <Route index element={<ListRickMorty/>}></Route>
                 <Route path=":id/:slug" element={<DetailCharacter/>}></Route>
+            </Route>
             </Route>
         </Routes>
     )
