@@ -3,11 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './Global.css'
 import { BrowserRouter } from 'react-router'
 import AppRouter from './AppRouter'
+import LoginProvider from './context/authcontext/Provider'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
+    <LoginProvider>
     <AppRouter />
-    </BrowserRouter>
-  </StrictMode>,
+    </LoginProvider>
+    </BrowserRouter>,
+  </StrictMode>
 )
