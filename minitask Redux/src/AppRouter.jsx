@@ -11,6 +11,7 @@ import { Login } from './Pages/FormContext';
 import { Layout } from './Pages/Layout';
 import { EditProfile } from './Pages/Profile';
 import { SurveyPerokok } from './Pages/FormPerokok';
+import { ReduxProducts } from './Pages/ReduxProducts';
 
 function AppRouter() {
     return(
@@ -25,6 +26,7 @@ function AppRouter() {
             <Route path='product' element={<Product/>}></Route>
             <Route path='counter' element={<Counter/>}></Route>
             <Route path='survey-perokok' element={<SurveyPerokok/>}></Route>
+            <Route path='product-redux' element={<ReduxProducts/>}></Route>
             <Route path='character' element={<RickMorty/>}>
                 <Route index element={<ListRickMorty/>}></Route>
                 <Route path=":id/:slug" element={<DetailCharacter/>}></Route>
