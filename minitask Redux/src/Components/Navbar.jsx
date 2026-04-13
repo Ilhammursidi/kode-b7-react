@@ -36,6 +36,10 @@ function Nav() {
                     Survey Perokok
                 </NavLink>
                 </li>
+                <li><NavLink className={({ isActive }) => isActive ? "bg-white rounded px-1" : " "} to={"/product-redux"}>
+                    Products(redux)
+                </NavLink>
+                </li>
                 <li>
                     {user ? (
                         <section className="flex items-center gap-2">
