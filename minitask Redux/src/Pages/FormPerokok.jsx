@@ -68,12 +68,19 @@ export function SurveyPerokok() {
                     </div>
                     <div>
                         <label><b>Jenis Kelamin</b></label> <br />
+                        <div className="flex flex-row justify-around">
+                            <div>
                         <input type="radio" name="gender" id="L"
                             value={form.gender === "Laki-laki"}
                             onChange={(e) => handleChange("gender", "Laki-laki")} required></input><label htmlFor="L"><b>Laki-laki</b></label>
+                            </div>
+                            <div>
+
                         <input type="radio" name="gender" id="P"
                             value={form.gender === "Perempuan"}
                             onChange={(e) => handleChange("gender", "Perempuan")} required></input><label htmlFor="P"><b>Perempuan</b></label>
+                            </div>
+                            </div>                        
                     </div>
                     <div>
                         <label htmlFor="perokok"><b>Apakah anda seorang perokok ?</b></label>
@@ -135,9 +142,9 @@ export function SurveyPerokok() {
                                         {item.brand.includes(brand) ? "✔" : "-"}
                                     </td>
                                 ))}
-                                <td align="center" className="border-l border-r">
-                                    <button className="text-center" onClick={() => dispatch(removeSmoker(item.id))}>
-                                        X
+                                <td align="center" className="border-l border-r ">
+                                    <button className="text-center p-2" onClick={() => dispatch(removeSmoker(item.id))}>
+                                        <img src="/public/Trash.svg"/>
                                     </button>
                                 </td>
                             </tr>
